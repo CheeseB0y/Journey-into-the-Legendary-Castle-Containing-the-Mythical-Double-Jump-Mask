@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://edny0xnsfjdt"]
+
+[ext_resource type="Script" uid="uid://bw4ttqjinydyj" path="res://Door.gd" id="1_1vvux"]
+[ext_resource type="PackedScene" uid="uid://ciifyyipv3k1n" path="res://GothicTileMap.tscn" id="2_iu8q0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cuixy"]
+radius = 14.0
+height = 60.0
+
+[node name="Door" type="Area2D" unique_id=566291353]
+script = ExtResource("1_1vvux")
+
+[node name="TileMap" parent="." unique_id=1949187653 instance=ExtResource("2_iu8q0")]
+visible = false
+light_mask = 2
+visibility_layer = 2
+layer_1/tile_data = PackedInt32Array(-131073, 1179648, 1, -65537, 1179648, 2, -1, 1179648, 3, 65535, 1179648, 4, -196608, 1245184, 1, -131072, 1245184, 2, -65536, 1245184, 3, 0, 1245184, 4)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=172999858]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_cuixy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

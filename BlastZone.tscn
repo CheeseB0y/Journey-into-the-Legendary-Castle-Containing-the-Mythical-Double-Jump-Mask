@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://baxhxtrasx81g"]
+
+[ext_resource type="Script" uid="uid://1ee407q4mbbt" path="res://BlastZone.gd" id="1_ikadi"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w2feu"]
+
+[node name="BlastZone" type="Area2D" unique_id=1095132301]
+script = ExtResource("1_ikadi")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=1973439545]
+shape = SubResource("WorldBoundaryShape2D_w2feu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
