@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://ckavqb25bdaul"]
+
+[ext_resource type="Script" uid="uid://cc0soel8knffu" path="res://World.gd" id="1_2dftf"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://Player.tscn" id="1_c6gwx"]
+[ext_resource type="Texture2D" uid="uid://cfu4emopuv50u" path="res://assests/sprites/heart.png" id="3_js7pq"]
+[ext_resource type="AudioStream" uid="uid://bcsrg20pbnlbb" path="res://assests/sound/castle_song.wav" id="4_js7pq"]
+
+[node name="WorldMap" type="Node2D" unique_id=1555676802]
+process_mode = 3
+script = ExtResource("1_2dftf")
+
+[node name="CurrentRoom" type="Node2D" parent="." unique_id=1014642104]
+process_mode = 1
+
+[node name="Player" parent="." unique_id=2080843618 instance=ExtResource("1_c6gwx")]
+process_mode = 1
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=415799099]
+process_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=51845010]
+process_mode = 1
+offset_left = 1.0
+offset_right = 201.0
+offset_bottom = 67.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Heart1" type="TextureRect" parent="HUD/HBoxContainer" unique_id=2010495693 groups=["hearts"]]
+process_mode = 1
+layout_mode = 2
+texture = ExtResource("3_js7pq")
+
+[node name="Heart2" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1148696758 groups=["hearts"]]
+process_mode = 1
+layout_mode = 2
+texture = ExtResource("3_js7pq")
+
+[node name="Heart3" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1239599415 groups=["hearts"]]
+process_mode = 1
+layout_mode = 2
+texture = ExtResource("3_js7pq")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=980717000]
+process_mode = 1
+stream = ExtResource("4_js7pq")
+autoplay = true
+
+[node name="PauseUI" type="CanvasLayer" parent="." unique_id=19619856]
+
+[node name="Label" type="Label" parent="PauseUI" unique_id=1474339724]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -11.5
+offset_right = 28.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Paused"

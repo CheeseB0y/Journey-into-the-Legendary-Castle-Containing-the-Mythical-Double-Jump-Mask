@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://rxaj2a5cdaqn"]
 
 [ext_resource type="Script" uid="uid://60s53jl5njqh" path="res://DoubleJumpPickup.gd" id="1_471qn"]
-[ext_resource type="Texture2D" uid="uid://dhodkf8cqstgj" path="res://assests/Fantasy RPG (Toony) 32x32.png" id="2_wu7b2"]
+[ext_resource type="Texture2D" uid="uid://dhodkf8cqstgj" path="res://assests/sprites/Fantasy RPG (Toony) 32x32.png" id="2_wu7b2"]
+[ext_resource type="AudioStream" uid="uid://bg5s80f6hm7nm" path="res://assests/sound/CST_Chest_Ancient_Close2_SFXWiz.wav" id="3_2c8a3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2c8a3"]
 atlas = ExtResource("2_wu7b2")
@@ -54,6 +55,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wu7b2"]
 size = Vector2(28, 31)
 
+[sub_resource type="LabelSettings" id="LabelSettings_2c8a3"]
+font_size = 32
+
 [node name="DoubleJumpMask" type="Area2D" unique_id=1329264962]
 script = ExtResource("1_471qn")
 
@@ -68,5 +72,30 @@ frame_progress = 1.0
 [node name="CollisionShape" type="CollisionShape2D" parent="Area2D" unique_id=261546588]
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_wu7b2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=792165362]
+stream = ExtResource("3_2c8a3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=135242211]
+layer = 10
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=139134716]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.5
+offset_top = -11.5
+offset_right = 90.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Double Jump Unlocked!"
+label_settings = SubResource("LabelSettings_2c8a3")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

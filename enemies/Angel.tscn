@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://cqj637d8cfo16"]
+
+[ext_resource type="Texture2D" uid="uid://dcgyoa5h0rwc7" path="res://assests/sprites/gothicvania church files/Assets/SPRITES/angel/spritesheet/angel.png" id="1_801ro"]
+[ext_resource type="Script" uid="uid://dg8x4akh727t" path="res://enemies/Angel.gd" id="1_uxrkf"]
+[ext_resource type="AudioStream" uid="uid://dc2cdqfjnkw8b" path="res://assests/sound/Woosh_20.wav" id="3_qseo6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxrkf"]
+atlas = ExtResource("1_801ro")
+region = Rect2(976, 0, 122, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bthb"]
+atlas = ExtResource("1_801ro")
+region = Rect2(0, 117, 122, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r173s"]
+atlas = ExtResource("1_801ro")
+region = Rect2(122, 117, 122, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7mg8"]
+atlas = ExtResource("1_801ro")
+region = Rect2(0, 0, 122, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qy1o"]
+atlas = ExtResource("1_801ro")
+region = Rect2(122, 0, 122, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wxe8"]
+atlas = ExtResource("1_801ro")
+region = Rect2(244, 0, 122, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnyyx"]
+atlas = ExtResource("1_801ro")
+region = Rect2(366, 0, 122, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3adc"]
+atlas = ExtResource("1_801ro")
+region = Rect2(488, 0, 122, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0ryq"]
+atlas = ExtResource("1_801ro")
+region = Rect2(610, 0, 122, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbsx8"]
+atlas = ExtResource("1_801ro")
+region = Rect2(732, 0, 122, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0v5w"]
+atlas = ExtResource("1_801ro")
+region = Rect2(854, 0, 122, 117)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3tb8i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxrkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bthb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r173s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bthb")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7mg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qy1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wxe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnyyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3adc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0ryq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbsx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0v5w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kabrw"]
+size = Vector2(19, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5silj"]
+size = Vector2(76, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjbus"]
+size = Vector2(709, 606)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fg2h"]
+size = Vector2(56, 61)
+
+[node name="Angel" type="CharacterBody2D" unique_id=1613327816]
+script = ExtResource("1_uxrkf")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=213759440]
+sprite_frames = SubResource("SpriteFrames_3tb8i")
+animation = &"attack"
+frame_progress = 0.29135785
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=177456502]
+visible = false
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_kabrw")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=858605317]
+visible = false
+
+[node name="CollisionShape" type="CollisionShape2D" parent="HurtBox" unique_id=1177846237]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_5silj")
+
+[node name="PlayerDetection" type="Area2D" parent="." unique_id=1331105608]
+visible = false
+
+[node name="CollisionShape" type="CollisionShape2D" parent="PlayerDetection" unique_id=1489417965]
+shape = SubResource("RectangleShape2D_xjbus")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=1148353729]
+visible = false
+
+[node name="CollisionShape" type="CollisionShape2D" parent="HitBox" unique_id=952441802]
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_0fg2h")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1749682272]
+stream = ExtResource("3_qseo6")
+pitch_scale = 1.85
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
