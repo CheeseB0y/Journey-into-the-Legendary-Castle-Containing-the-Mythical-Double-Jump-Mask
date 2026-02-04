@@ -10,7 +10,7 @@ d-pad/wasd/arrow keys: move
 <img width="1148" height="636" alt="game_promo_2" src="https://github.com/user-attachments/assets/798e735c-b915-4269-87d3-aef8b6def3f7" />
 <img width="1154" height="642" alt="game_promo_3" src="https://github.com/user-attachments/assets/b9ce0f2d-2408-4268-a5bc-eab1c8ddc890" />
   
-Journey into the castle to find the mythical double jump mask then use it to escape the castle grounds. This project was part of the global game jam and was built solo over the course of 48 hours. 
+Journey into the castle to find the mythical double jump mask then use it to escape the castle grounds. This project was part of global game jam 2026 and was built solo over the course of 48 hours. 
 
 Assets used:  
 https://ansimuz.itch.io/gothicvania-church-pack  
