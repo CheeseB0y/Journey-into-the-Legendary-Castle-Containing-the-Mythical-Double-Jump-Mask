@@ -1,5 +1,5 @@
 # Journey-into-the-Legendary-Castle-Containing-the-Mythical-Double-Jump-Mask
-Journey into the Legendary Castle Containing the Mythical Double Jump Mask is a metroidvainia style game where the player collects masks to upgrade their abilities and progress. The project was built using Godot game engine with the use of some free asset packs available on itch.io. Plug in a controller to play or use the keyboard.  
+Journey into the Legendary Castle Containing the Mythical Double Jump Mask is a metroidvania style game where the player collects masks to upgrade their abilities and progress. The project was built using Godot game engine with the use of some free asset packs available on itch.io. Plug in a controller to play or use the keyboard.  
   
 A button/space bar: jump  
 X button/p key: punch  
